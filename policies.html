@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025 Cycle 1 IEEE SPS Chapter Initiative on Large Language Models - Statements</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #27ae60;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imgs/banner_leiria.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            color: var(--primary-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
+        .btn-custom {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .btn-custom:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+        }
+
+        /* Cards */
+        .card-custom {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Speaker Cards */
+        .speaker-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .speaker-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .speaker-content {
+            padding: 1.5rem;
+        }
+
+        /* Tables */
+        .table-custom {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .table-custom th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .table-custom td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        /* Grid System */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+        }
+
+        .col-12 {
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .col-md-5 {
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .col-lg-6 {
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .col-lg-8 {
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .mx-auto {
+            margin: 0 auto;
+        }
+
+        /* Text Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-success {
+            color: var(--secondary-color);
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .navbar .container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .col-md-5 {
+                width: 50%;
+            }
+
+            .col-lg-6 {
+                width: 50%;
+            }
+
+            .col-lg-8 {
+                width: 66.666%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 60vh;
+            }
+
+            .hero-content {
+                margin: 0 1rem;
+            }
+
+            .table-custom {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Sponsors Section */
+        .sponsors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .sponsor-img {
+            max-height: 80px;
+            transition: filter 0.3s ease;
+        }
+
+        .sponsor-img:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Session Containers */
+        .session-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .session-alert {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .session-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .session-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .session-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .session-card .btn-custom {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Organizers and Sponsors Section */
+        .organizers-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .organizers-col, .sponsors-col {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .organizers-card, .sponsors-card {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .sponsors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 1.5rem;
+            height: 100%;
+        }
+
+        .sponsor-img {
+            max-height: 80px;
+            width: auto;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+        }
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+    </style>
+
+    
+</head>
+
+
+
+<body>
+    <nav class="navbar ">
+        <a class="navbar-brand">IEEE SPS Student Branch Chapter IPLeiria</a>
+        <!-- <a class="navbar-brand">
+            <div class=" flex-column">
+                <div><span style="text-align: left;">IEEE SPS Student Branch Chapter Leiria</span></div>
+                <div><span style="text-align: left;">IEEE SPS Portugal Chapter</span></div>
+
+            </div>
+        </a> -->
+        <a class="navbar-brand" href="mailto:contact@mmspleiria2024.pt">E-mail: sps.sbc.ipleiria@gmail.com</a>
+    </nav>
+
+    <section class="section-color" style="margin-top: 2%;"></section>
+        <div class="container">
+            <p class="h1 text-center"><strong>Event Policies</strong></p>
+            <br>
+            <p class="lead mb-3"><strong><b>IEEE Event Terms and Conditions:</b></strong> <a href="https://www.ieee.org/about/help/site-terms-conditions.html" style="text-decoration:none">https://www.ieee.org/about/help/site-terms-conditions.html</a></p>
+            <br>
+            <p class="lead mb-3"><strong><b>IEEE Privacy Policy:</b></strong> <a href="https://www.ieee.org/security-privacy.html" style="text-decoration:none">https://www.ieee.org/security-privacy.html</a></p>
+            <br>
+            <p class="lead mb-3"><strong><b>IEEE Event Conduct and Safety Statement:</b></strong> IEEE believes that science, technology, and engineering are fundamental human activities, for which openness, international collaboration, and the free flow of talent and ideas are essential. Its meetings, events, and other events seek to enable engaging, thought provoking conversations that support IEEE’s core mission of advancing technology for humanity.</p>
+            <p class="lead mb-3">Accordingly, IEEE is committed to providing a safe, productive, and welcoming environment to all participants, including staff and vendors, at IEEE-related events. IEEE has no tolerance for discrimination, harassment, or bullying in any form at IEEE-related events. All participants have the right to pursue shared interests without harassment or discrimination in an environment that supports diversity and inclusion.</p>
+            <p class="lead mb-3">Participants are expected to adhere to these principles and respect the rights of others. IEEE seeks to provide a secure environment at its events. Participants should report any behavior inconsistent with the principles outlined here, to on site staff, security or venue personnel, or to <a href="mailto:eventconduct@ieee.org" style="text-decoration:none">eventconduct@ieee.org</a>.</p>
+            <br>
+            <p class="lead mb-3"><strong><b>IEEE Signal Processing Society Diversity Statement:</b></strong> The IEEE Signal Processing Society adheres to the IEEE Code of Conduct and is committed to providing equal opportunity to its members, regardless of ethnicity, race, nationality, disability, socioeconomic status, sexual orientation, religion, gender, age, and/or personal identity. The Society is committed to a welcoming and inclusive environment that promotes diversity in the signal processing community.</p>
+            <p class="lead mb-3">View the complete IEEE Signal Processing Society Policy & Procedures Manual at <a href="http://signalprocessingsociety.org/volunteers/policy-and-procedures-manual" style="text-decoration:none">http://signalprocessingsociety.org/volunteers/policy-and-procedures-manual</a>.</p>
+            
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row" style="display: flex; justify-content: space-around;">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <a href="index.html">Home</a> | 
+                    <a href="policies.html">Event Policies</a> | 
+                    <a href="https://www.ieee.org/security-privacy.html">IEEE Privacy Policy</a> | 
+                    <a href="https://www.ieee.org/about/help/site-terms-conditions.html">Terms</a>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    © 2026 - All rights reserved.
+                </div>
+                <!-- <div class="col-md-4 text-center text-md-end">
+                    Template by Amanda Foligne
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>

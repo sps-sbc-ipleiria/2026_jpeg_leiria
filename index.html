@@ -148,6 +148,77 @@
             padding: 1.5rem;
         }
 
+        .sponsor-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sponsor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        details.expandable-row > summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: var(--light-bg);
+            border-radius: 6px;
+            padding: 0.6rem 0.8rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        details.expandable-row > summary::-webkit-details-marker { display: none; }
+        details.expandable-row > summary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        }
+        details.expandable-row[open] > summary {
+            border-radius: 6px 6px 0 0;
+        }
+        details.expandable-row .expandable-content {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            padding: 1.2rem 1.2rem 1rem;
+        }
+        details.expandable-row .chevron {
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            transition: transform 0.2s ease;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        details.expandable-row[open] .chevron {
+            transform: rotate(180deg);
+        }
+
+        .program-row {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        .program-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        }
+        a.program-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            text-decoration: none;
+            color: inherit;
+        }
+
         /* Tables */
         .table-custom {
             width: 100%;
@@ -504,7 +575,7 @@ Humans and Machines</h1>
             <br>
             <br>
 
-            <!-- 2x2 grid: row 1 = Date&Time + Venue, row 2 = Registration + Hybrid -->
+
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 860px; margin: 0 auto;">
                 <!-- Row 1: Date & Time -->
                 <div class="card-custom" style="margin-bottom: 0; display: flex; flex-direction: column;">
@@ -533,7 +604,7 @@ Humans and Machines</h1>
                     <h4 class="text-success mb-4">Registration</h4>
                     <p>Attendance is free, but registration is required. Register now to secure your place at the workshop and the networking dinner.</p>
                     <div style="margin-top: auto; padding-top: 10px;">
-                        <a href="https://forms.gle/H5Fooo78U2EAg29e6" target="_blank" class="btn-custom">
+                        <a href="https://docs.google.com/forms/d/1DBBdkTsHi97hZqa0xwh2-Qpdh34LTIiMCdPgnXS64LM/edit?ts=6a340be2" target="_blank" class="btn-custom">
                             <i class="fas fa-pen"></i> Register here
                         </a>
                     </div>
@@ -617,14 +688,43 @@ Humans and Machines</h1>
                                 <span style="flex: 1;">Presentation</span>
                                 <span style="width: 180px; text-align: right;">Speaker</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-                                <span style="flex: 1; min-width: 200px;">Overview of JPEG AI and JPEG Pleno standardization efforts</span>
-                                <strong style="width: 180px; text-align: right; white-space: nowrap;">João Ascenso</strong>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-                                <span style="flex: 1; min-width: 200px;">Coding for Machines: Efficient Visual Representations for AI</span>
-                                <strong style="width: 180px; text-align: right; white-space: nowrap;">Ivan Bajíc</strong>
-                            </div>
+                            <details class="expandable-row" style="margin-bottom: 0.4rem;">
+                                <summary>
+                                    <span style="flex: 1; min-width: 200px;">Overview of JPEG AI and JPEG Pleno standardization efforts</span>
+                                    <strong style="width: 180px; text-align: right; white-space: nowrap;">João Ascenso</strong>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </summary>
+                                <div class="expandable-content">
+                                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                                        <img src="imgs/speakers/joao_ascenso.png" alt="João Ascenso" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                        <div style="flex: 1; min-width: 240px;">
+                                            <h4 style="color: var(--primary-color); margin-bottom: 0.2rem;">João Ascenso</h4>
+                                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.8rem;">Instituto Superior Técnico – Universidade de Lisboa, Instituto de Telecomunicações, Portugal</p>
+                                            <p>João Ascenso is a professor at Instituto Superior Técnico and a researcher at Instituto de Telecomunicações, Lisbon. His work focuses on visual coding, quality assessment, and coding for machines. He is actively involved in international standardization, currently chairing the JPEG CPM subgroup and the JPEG AI ad-hoc group. He has published over 150 papers, received three Best Paper Awards, and served as associate editor for several IEEE journals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="expandable-row" style="margin-bottom: 0.4rem;">
+                                <summary>
+                                    <span style="flex: 1; min-width: 200px;">Coding for Machines: Efficient Visual Representations for AI</span>
+                                    <strong style="width: 180px; text-align: right; white-space: nowrap;">Ivan Bajíc</strong>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </summary>
+                                <div class="expandable-content">
+                                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                                        <img src="imgs/speakers/Ivan.jpeg" alt="Ivan Bajíc" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                        <div style="flex: 1; min-width: 240px;">
+                                            <h4 style="color: var(--primary-color); margin-bottom: 0.2rem;">Ivan V. Bajíc</h4>
+                                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.8rem;">Simon Fraser University, Canada</p>
+                                            <p style="font-weight: 600; margin-bottom: 0.4rem;">Abstract</p>
+                                            <p style="margin-bottom: 0.8rem;">As visual AI models continue to make their way from research labs to the real world, questions like how much data they need and how will these data be delivered to them become increasingly important. This talk will present a brief overview of the field of study related to efficient visual representations for AI-based analysis, also known as coding for machines. We will explain what makes coding for machines different from the conventional visual compression we all use daily. We will then talk about the current state of knowledge in the field and several recent standardization efforts. We will conclude the talk with several key challenges and some ideas on future progress in the field. </p>
+                                            <p style="font-weight: 600; margin-bottom: 0.4rem;">Bio</p>
+                                            <p>Ivan V. Bajić is a Professor of Engineering Science at Simon Fraser University in Canada. His research interests include signal processing and machine learning with applications to multimedia compression, communications, and analysis. He has contributed to JPEG AI, MPEG AI, and several earlier video coding standards. His work has appeared in leading venues in the field and has received several awards, most recently the 2023 TCSVT Best Paper Award and the 2023 IEEE MSA-TC Best Paper Award. He is a Past Chair of the IEEE Multimedia Signal Processing Technical Committee. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
                             <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap;">
                                 <span style="flex: 1; min-width: 200px;"><i>TBC</i></span>
                                 <strong style="width: 180px; text-align: right; white-space: nowrap;">Jona Ballé</strong>
@@ -646,17 +746,30 @@ Humans and Machines</h1>
                                 <span style="flex: 1;">Presentation</span>
                                 <span style="width: 180px; text-align: right;">Speaker</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-                                <span style="flex: 1; min-width: 200px;">Overview of JPEG Trust standardization efforts</span>
-                                <strong style="width: 180px; text-align: right; white-space: nowrap;">Frederik Temmermans</strong>
-                            </div>
+                            <details class="expandable-row" style="margin-bottom: 0.4rem;">
+                                <summary>
+                                    <span style="flex: 1; min-width: 200px;">Overview of JPEG Trust standardization efforts</span>
+                                    <strong style="width: 180px; text-align: right; white-space: nowrap;">Frederik Temmermans</strong>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </summary>
+                                <div class="expandable-content">
+                                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                                        <img src="imgs/speakers/Frederik_Temmermans.jpg" alt="Frederik Temmermans" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                        <div style="flex: 1; min-width: 240px;">
+                                            <h4 style="color: var(--primary-color); margin-bottom: 0.2rem;">Frederik Temmermans</h4>
+                                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.8rem;">Vrije Universiteit Brussel, Belgium</p>
+                                            <p>Frederik Temmermans is guest professor in multimedia at the Department of Electronics and Informatics (ETRO), associated with the Vrije Universiteit Brussel and imec. His research focuses on media privacy, security, authenticity, and integrity. He has been involved in various research projects in the medical, mobile, and cultural domains. Frederik is an active member of the JPEG standardization committee (ISO/IEC JTC1/SC29/WG1) where he currently chairs the JPEG Systems and Integration subgroup and leads the JPEG Trust (ISO/IEC 21617) standardization activities. Frederik is also co-founder of the VUB spin-off company Universum Digitalis and member of the Photoconsortium Steering Committee.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
                             <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
                                 <span style="flex: 1; min-width: 200px;">Trust in the age of synthetic reality</span>
                                 <strong style="width: 180px; text-align: right; white-space: nowrap;">Mário Campolargo</strong>
                             </div>
                             <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap;">
                                 <span style="flex: 1; min-width: 200px;"><i>TBC</i></span>
-                                <strong style="width: 180px; text-align: right; white-space: nowrap;">Carlos Pires</strong>
+                                <strong style="width: 180px; text-align: right; white-space: nowrap;">Carlos Morais Pires</strong>
                             </div>
                         </div>
                     </div>
@@ -670,33 +783,70 @@ Humans and Machines</h1>
                     </div>
                     <div class="speaker-content">
                         <p style="margin-bottom: 1.2rem;">As AI increasingly participates in the creation, transformation, distribution, and consumption of digital content, ensuring trust becomes a critical challenge. This panel will explore the opportunities offered by AI-enabled media, the risks associated with misinformation, manipulation, and loss of authenticity, and the responsibilities of technology developers, content creators, policymakers, and standards bodies. Particular attention will be given to how media representation standards can support transparency, provenance, interoperability, and trust for content intended for both humans and machines.</p>
-                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start;">
-                            <!-- Moderator -->
-                            <div style="display: flex; flex-direction: column; gap: 0;">
-                                <div style="padding: 0.5rem 0.8rem; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); margin-bottom: 0.4rem;">
-                                    Moderator
-                                </div>
-                                <div style="background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem;">
-                                    <strong>Fernando Pereira</strong>
-                                </div>
+                        <div style="display: flex; flex-direction: column; gap: 0;">
+                            <div style="display: flex; gap: 1rem; padding: 0.5rem 0.8rem; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); margin-bottom: 0.4rem;">
+                                <span style="flex: 1;">Speakers</span>
                             </div>
-                            <!-- Participants -->
-                            <div style="display: flex; flex-direction: column; gap: 0;">
-                                <div style="padding: 0.5rem 0.8rem; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); margin-bottom: 0.4rem; text-align: right;">
-                                    Participants
+                            <details class="expandable-row" style="margin-bottom: 0.4rem;">
+                                <summary>
+                                    <strong style="flex: 1;">Fernando Pereira <span style="color: #999; font-weight: 400;">(Moderator)</span></strong>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </summary>
+                                <div class="expandable-content">
+                                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                                        <img src="imgs/speakers/Fernando_Pereira.png" alt="Fernando Pereira" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                        <div style="flex: 1; min-width: 240px;">
+                                            <h4 style="color: var(--primary-color); margin-bottom: 0.2rem;">Fernando Pereira</h4>
+                                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.8rem;">Instituto Superior Técnico – Universidade de Lisboa, Instituto de Telecomunicações, Portugal</p>
+                                            <p style="margin-bottom: 0.5rem;">Fernando Pereira is with the Department of Electrical and Computer Engineering at Instituto Superior Técnico, University of Lisbon, and the Instituto de Telecomunicações, Lisbon, Portugal. He has served as Chair of the MPEG Requirements Subgroup and the JPEG Requirements Subgroup, playing a leading role in the design of several high-impact international media standards, including, in recent years, JPEG Pleno, JPEG AI, and JPEG Trust.</p>
+                                            <p style="margin-bottom: 0.5rem;">He has authored more than 300 publications in international journals, conferences, and workshops, and has delivered numerous invited talks and tutorials worldwide. His research interests include video analysis, representation, coding, description, adaptation, and advanced multimedia services.</p>
+                                            <p>Fernando Pereira is an IEEE Fellow, an EURASIP Fellow, and an IET Fellow. He served as Vice President of the IEEE Signal Processing Society from 2018 to 2020 and has been a member of both the IEEE Signal Processing Society Board of Governors and the EURASIP Board of Directors. From 2013 to 2015, he was Editor-in-Chief of the IEEE Journal of Selected Topics in Signal Processing, and he has served as Associate Editor for several leading journals in the field.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                                    <div style="background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; text-align: right;">
-                                        <strong>Touradj Ebrahimi</strong>
-                                    </div>
-                                    <div style="background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; text-align: right;">
-                                        <strong>Mário Campolargo</strong>
-                                    </div>
-                                    <div style="background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; text-align: right;">
-                                        <strong>Nuno Guimarães</strong>
+                            </details>
+                            <details class="expandable-row" style="margin-bottom: 0.4rem;">
+                                <summary>
+                                    <strong style="flex: 1;">Touradj Ebrahimi</strong>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </summary>
+                                <div class="expandable-content">
+                                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                                        <img src="imgs/speakers/Touradj_Ebrahimi.jpg" alt="Touradj Ebrahimi" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                        <div style="flex: 1; min-width: 240px;">
+                                            <h4 style="color: var(--primary-color); margin-bottom: 0.2rem;">Touradj Ebrahimi</h4>
+                                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.8rem;">École Polytechnique Fédérale de Lausanne, Switzerland</p>
+                                            <p style="margin-bottom: 0.5rem;">Touradj Ebrahimi is a Professor at the École Polytechnique Fédérale de Lausanne (EPFL) and Head of the Multimedia Signal Processing Group (MMSPG). Since 2014, he has served as Convenor of the JPEG Committee (ISO/IEC JTC 1/SC 29/WG 1), leading the development of several groundbreaking international standards, including JPEG XS for ultra-low-latency, high-quality imaging, JPEG XL for next-generation image compression, JPEG AI for AI-based image coding, JPEG Trust for multimedia authenticity in the era of synthetic media, as well as the emerging JPEG DNA standard for encoding digital data into synthetic DNA and JPEG XE, the world's first standard for coding event-based visual data for machine vision applications. These technologies have had a significant impact across industries including broadcasting, cinema, extended reality, social media, publishing, and digital archiving.</p>
+                                            <p style="margin-bottom: 0.5rem;">Professor Ebrahimi has authored more than 350 peer-reviewed publications, holds numerous patents, and has supervised over 50 doctoral theses. His contributions have been recognized with prestigious distinctions including the SMPTE Progress Medal, the IEEE Standards Medallion, and an Emmy Award from the National Academy of Television Arts & Sciences, among many other international honors.</p>
+                                            <p>Beyond academia, he is the founder and CEO of RayShaper SA, a Swiss company developing AI-driven imaging solutions with global impact, and he serves as a trusted advisor to governments, research agencies, and industry consortia, contributing to the definition of policies and technology roadmaps in areas such as trustworthy AI, media authenticity, and sustainable innovation.</p>
+                                        </div>
                                     </div>
                                 </div>
+                            </details>
+                            <div style="display: flex; align-items: center; gap: 1rem; background: var(--light-bg); border-radius: 6px; padding: 0.6rem 0.8rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+                                <strong style="flex: 1;">Mário Campolargo</strong>
                             </div>
+                            <details class="expandable-row" style="margin-bottom: 0.4rem;">
+                                <summary>
+                                    <strong style="flex: 1;">Nuno Guimarães</strong>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </summary>
+                                <div class="expandable-content">
+                                    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                                        <img src="imgs/speakers/Nuno_Guimaraes.png" alt="Nuno Guimarães" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                        <div style="flex: 1; min-width: 240px;">
+                                            <h4 style="color: var(--primary-color); margin-bottom: 0.2rem;">Nuno Guimarães</h4>
+                                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.8rem;">ISCTE – Instituto Universitário de Lisboa, Portugal</p>
+                                            <p style="margin-bottom: 0.5rem;">Nuno M. Guimarães (b. 25.01.1960) got his Electrotechnical Engineering degree at Instituto Superior Técnico (IST/UTL), Portugal (1983), and the PhD in E&C Eng (1992).</p>
+                                            <p style="margin-bottom: 0.5rem;">He is a Full Professor since 2001 (ISCTE-University Institute of Lisbon, Faculty of Sciences, UL and IST/UTL (1992/1997)).</p>
+                                            <p style="margin-bottom: 0.5rem;">He was also a consultant (visiting researcher) for AT&T Bell Labs, Murray Hill, NJ, USA (1989-1991), invited Professor at the Technische Universität Berlin, Germany in 2010, Visiting scholar and Guest Professor at the Indian Institute of Technology Gandhinagar (IITGN), India, since 2013.</p>
+                                            <p style="margin-bottom: 0.5rem;">He was founder and member of the board of three startup IT companies (1999 to 2006). He is Senior Member of ACM (Association for Computing Machinery) since 2012.</p>
+                                            <p style="margin-bottom: 0.5rem;">His long time and current research interests include Human Computer Interaction & User Experience Design, and Law & Technology. </p>
+                                            <p>He is now pursuing a LLB (law degree) at the Faculty of Law of the University of Lisbon. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -734,33 +884,153 @@ Humans and Machines</h1>
     </section>
 
 
+    <!-- Speakers Section -->
+    <!-- <section class="section-padding" id="speakers">
+        <div class="container">
+            <h2 class="text-center mb-5">Speakers</h2>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+                <div class="speaker-card" id="speaker-joao">
+                    <div class="speaker-header" style="display: flex; align-items: center; gap: 1.5rem;">
+                        <img src="imgs/speakers/joao_ascenso.png" alt="João Ascenso" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.4);">
+                        <div>
+                            <h2 style="margin-bottom: 0.2rem;">João Ascenso</h2>
+                            <p style="opacity: 0.8; margin: 0; font-size: 0.95rem;">Instituto Superior Técnico - Universidade de Lisboa, Instituto de Telecomunicações, Portugal</p>
+                        </div>
+                    </div>
+                    <div class="speaker-content" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bio</h4>
+                            <p>João Ascenso is a professor at Instituto Superior Técnico and a researcher at Instituto de Telecomunicações, Lisbon. His work focuses on visual coding, quality assessment, and coding for machines. He is actively involved in international standardization, currently chairing the JPEG CPM subgroup and the JPEG AI ad-hoc group. He has published over 150 papers, received three Best Paper Awards, and served as associate editor for several IEEE journals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card" id="speaker-ivan">
+                    <div class="speaker-header" style="display: flex; align-items: center; gap: 1.5rem;">
+                        <img src="imgs/speakers/Ivan.jpeg" alt="Ivan Bajić" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.4);">
+                        <div>
+                            <h2 style="margin-bottom: 0.2rem;">Ivan Bajić</h2>
+                            <p style="opacity: 0.8; margin: 0; font-size: 0.95rem;">Simon Fraser University, Canada</p>
+                        </div>
+                    </div>
+                    <div class="speaker-content" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Abstract</h4>
+                            <p style="font-weight: 600; margin-bottom: 0.6rem;">Coding for Machines: Efficient Visual Representations for AI</p>
+                            <p>As visual AI models continue to make their way from research labs to the real world, questions like how much data they need and how will these data be delivered to them become increasingly important. This talk will present a brief overview of the field of study related to efficient visual representations for AI-based analysis, also known as coding for machines. We will explain what makes coding for machines different from the conventional visual compression we all use daily. We will then talk about the current state of knowledge in the field and several recent standardization efforts. We will conclude the talk with several key challenges and some ideas on future progress in the field.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bio</h4>
+                            <p>Ivan V. Bajić is a Professor of Engineering Science at Simon Fraser University in Canada. His research interests include signal processing and machine learning with applications to multimedia compression, communications, and analysis. He has contributed to JPEG AI, MPEG AI, and several earlier video coding standards. His work has appeared in leading venues in the field and has received several awards, most recently the 2023 TCSVT Best Paper Award and the 2023 IEEE MSA-TC Best Paper Award. He is a Past Chair of the IEEE Multimedia Signal Processing Technical Committee.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card" id="speaker-frederik">
+                    <div class="speaker-header" style="display: flex; align-items: center; gap: 1.5rem;">
+                        <img src="imgs/speakers/Frederik_Temmermans.jpg" alt="Frederik Temmermans" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.4);">
+                        <div>
+                            <h2 style="margin-bottom: 0.2rem;">Frederik Temmermans</h2>
+                            <p style="opacity: 0.8; margin: 0; font-size: 0.95rem;">Vrije Universiteit Brussel, Belgium</p>
+                        </div>
+                    </div>
+                    <div class="speaker-content" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bio</h4>
+                            <p>Frederik Temmermans is guest professor in multimedia at the Department of Electronics and Informatics (ETRO), associated with the Vrije Universiteit Brussel and imec. His research focuses on media privacy, security, authenticity, and integrity. He has been involved in various research projects in the medical, mobile, and cultural domains. Frederik is an active member of the JPEG standardization committee (ISO/IEC JTC1/SC29/WG1) where he currently chairs the JPEG Systems and Integration subgroup and leads the JPEG Trust (ISO/IEC 21617) standardization activities. Frederik is also co-founder of the VUB spin-off company Universum Digitalis and member of the Photoconsortium Steering Committee.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card" id="speaker-fernando">
+                    <div class="speaker-header" style="display: flex; align-items: center; gap: 1.5rem;">
+                        <img src="imgs/speakers/Fernando_Pereira.png" alt="Fernando_Pereira" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.4);">
+                        <div>
+                            <h2 style="margin-bottom: 0.2rem;">Fernando Pereira</h2>
+                            <p style="opacity: 0.8; margin: 0; font-size: 0.95rem;">Instituto Superior Técnico - Universidade de Lisboa, Instituto de Telecomunicações, Portugal</p>
+                        </div>
+                    </div>
+                    <div class="speaker-content" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bio</h4>
+                            <p>Fernando Pereira is with the Department of Electrical and Computer Engineering at Instituto Superior Técnico, University of Lisbon, and the Instituto de Telecomunicações, Lisbon, Portugal. He has served as Chair of the MPEG Requirements Subgroup and the JPEG Requirements Subgroup, playing a leading role in the design of several high-impact international media standards, including, in recent years, JPEG Pleno, JPEG AI, and JPEG Trust.</p>
+                            <p>He has authored more than 300 publications in international journals, conferences, and workshops, and has delivered numerous invited talks and tutorials worldwide. His research interests include video analysis, representation, coding, description, adaptation, and advanced multimedia services.</p>
+                            <p>Fernando Pereira is an IEEE Fellow, an EURASIP Fellow, and an IET Fellow. He served as Vice President of the IEEE Signal Processing Society from 2018 to 2020 and has been a member of both the IEEE Signal Processing Society Board of Governors and the EURASIP Board of Directors. From 2013 to 2015, he was Editor-in-Chief of the IEEE Journal of Selected Topics in Signal Processing, and he has served as Associate Editor for several leading journals in the field.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card" id="speaker-touradj">
+                    <div class="speaker-header" style="display: flex; align-items: center; gap: 1.5rem;">
+                        <img src="imgs/speakers/Touradj_Ebrahimi.jpg" alt="Touradj Ebrahimi" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.4);">
+                        <div>
+                            <h2 style="margin-bottom: 0.2rem;">Touradj Ebrahimi</h2>
+                            <p style="opacity: 0.8; margin: 0; font-size: 0.95rem;">École Polytechnique Fédérale de Lausanne, Switzerland</p>
+                        </div>
+                    </div>
+                    <div class="speaker-content" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bio</h4>
+                            <p>Touradj Ebrahimi is a Professor at the École Polytechnique Fédérale de Lausanne (EPFL) and Head of the Multimedia Signal Processing Group (MMSPG). Since 2014, he has served as Convenor of the JPEG Committee (ISO/IEC JTC 1/SC 29/WG 1), leading the development of several groundbreaking international standards, including JPEG XS for ultra-low-latency, high-quality imaging, JPEG XL for next-generation image compression, JPEG AI for AI-based image coding, JPEG Trust for multimedia authenticity in the era of synthetic media, as well as the emerging JPEG DNA standard for encoding digital data into synthetic DNA and JPEG XE, the world's first standard for coding event-based visual data for machine vision applications. These technologies have had a significant impact across industries including broadcasting, cinema, extended reality, social media, publishing, and digital archiving.</p>
+                            <p>Professor Ebrahimi has authored more than 350 peer-reviewed publications, holds numerous patents, and has supervised over 50 doctoral theses. His contributions have been recognized with prestigious distinctions including the SMPTE Progress Medal, the IEEE Standards Medallion, and an Emmy Award from the National Academy of Television Arts & Sciences, among many other international honors.</p>
+                            <p>Beyond academia, he is the founder and CEO of RayShaper SA, a Swiss company developing AI-driven imaging solutions with global impact, and he serves as a trusted advisor to governments, research agencies, and industry consortia, contributing to the definition of policies and technology roadmaps in areas such as trustworthy AI, media authenticity, and sustainable innovation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card" id="speaker-guimaraes">
+                    <div class="speaker-header" style="display: flex; align-items: center; gap: 1.5rem;">
+                        <img src="imgs/speakers/Nuno_Guimaraes.png" alt="Nuno_Guimaraes" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.4);">
+                        <div>
+                            <h2 style="margin-bottom: 0.2rem;">Nuno Guimarães</h2>
+                            <p style="opacity: 0.8; margin: 0; font-size: 0.95rem;">ISCTE - Instituto Universitário de Lisboa, Portugal</p>
+                        </div>
+                    </div>
+                    <div class="speaker-content" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bio</h4>
+                            <p>Nuno M. Guimarães (b. 25.01.1960) got his Electrotechnical Engineering degree at Instituto Superior Técnico (IST/UTL), Portugal (1983), and the PhD in E&C Eng (1992).</p>
+                            <p>He is a Full Professor since 2001 (ISCTE-University Institute of Lisbon, Faculty of Sciences, UL and IST/UTL (1992/1997)).</p>
+                            <p>He was also a consultant (visiting researcher) for AT&T Bell Labs, Murray Hill, NJ, USA (1989-1991), invited Professor at the Technische Universität Berlin, Germany in 2010, Visiting scholar and Guest Professor at the Indian Institute of Technology Gandhinagar (IITGN), India, since 2013.</p>
+                            <p>He was founder and member of the board of three startup IT companies (1999 to 2006). He is Senior Member of ACM (Association for Computing Machinery) since 2012.</p>
+                            <p>His long time and current research interests include Human Computer Interaction & User Experience Design, and Law & Technology. </p>
+                            <p>He is now pursuing a LLB (law degree) at the Faculty of Law of the University of Lisbon. </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+
     <!-- Sponsors Section -->
     <section class="section-padding" id="sponsors">
         <div class="container">
             <h2 class="text-center mb-5">Sponsors and Support</h2>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/jpeg_logo.svg" alt="JPEG" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/logo2.png" alt="IEEE Signal Processing Society" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/logo1.png" alt="ESTG IPLeiria" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/it_logo.png" alt="Instituto de Telecomunicações" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/logo2_portugal.png" alt="IEEE SPS Portugal" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/ieee_portugal.png" alt="IEEE Portugal" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/sps_sbc_ipleiria.svg" alt="SPS SBC IPLeiria" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
-                <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; min-width: 160px;">
+                <div class="sponsor-card">
                     <img src="imgs/camara_municipal.png" alt="Câmara Municipal de Leiria" style="height: 90px; width: auto; object-fit: contain;">
                 </div>
             </div>
